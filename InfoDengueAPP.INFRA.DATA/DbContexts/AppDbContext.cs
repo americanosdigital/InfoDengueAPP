@@ -1,8 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using InfoDengueAPP.Domain.Entities;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace InfoDengueAPP.INFRASTRUCTURE.DbContexts
 {
+
+    public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
+    {
+        public AppDbContext CreateDbContext(string[] args)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
+            optionsBuilder.UseSqlServer("Server=localhost;Database=InfoDengue;Trusted_Connection=True;");
+
+            return new AppDbContext(optionsBuilder.Options);
+        }
+    }
+
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }

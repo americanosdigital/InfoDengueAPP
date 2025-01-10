@@ -1,9 +1,10 @@
+using Microsoft.EntityFrameworkCore;
 using InfoDengueAPP.INFRASTRUCTURE.DbContexts;
 using InfoDengueAPP.INFRASTRUCTURE.Repositories.Interfaces;
 using InfoDengueAPP.INFRASTRUCTURE.Repositories;
 using InfoDengueAPP.SERVICES.Interfaces;
 using InfoDengueAPP.SERVICES;
-using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
